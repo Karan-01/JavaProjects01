@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+
+ <bean  id="Bookbean1" class="com.hibernate.Book">
+	<constructor-arg name="bid" value=" 201"></constructor-arg>
+		<constructor-arg name="bname" value="AdvanceJava"></constructor-arg>
+		<constructor-arg name="price" value="400"></constructor-arg>
+	</bean>
+	 <bean  id="Bookbean2" class="com.hibernate.Book">
+	<constructor-arg name="bid" value=" 202"></constructor-arg>
+		<constructor-arg name="bname" value="CoreJava"></constructor-arg>
+		<constructor-arg name="price" value="350"></constructor-arg>
+	</bean>
+	 <bean  id="Bookbean3" class="com.hibernate.Book">
+	<constructor-arg name="bid" value=" 203"></constructor-arg>
+		<constructor-arg name="bname" value="Python"></constructor-arg>
+		<constructor-arg name="price" value="250"></constructor-arg>
+	</bean>
+	 <bean  id="Bookbean4" class="com.hibernate.Book">
+	<constructor-arg name="bid" value=" 204"></constructor-arg>
+	<constructor-arg name="bname" value="Computer Networking"></constructor-arg>
+		<constructor-arg name="price" value="200"></constructor-arg>
+	</bean>
+	
+	
+	 <bean  id="Addressbean1" class="com.hibernate.Address">
+	<constructor-arg name="hno" value="4/166"></constructor-arg>
+		<constructor-arg name="area" value="Shivaji Nagar"></constructor-arg>
+		<constructor-arg name="city" value="Gurugram"></constructor-arg>
+	</bean>
+	 <bean  id="Addressbean2" class="com.hibernate.Address">
+	<constructor-arg name="hno" value="4/167"></constructor-arg>
+		<constructor-arg name="area" value="Rajender Park"></constructor-arg>
+		<constructor-arg name="city" value="Noida"></constructor-arg>
+	</bean>
+	
+		
+	 <bean  id="Studentbean1" class="com.hibernate.Student">
+	<constructor-arg name="sid" value=" 01"></constructor-arg>
+		<constructor-arg name="sname" value="Karan"></constructor-arg>
+		<constructor-arg name="blist">
+		<list>
+		<ref bean="Bookbean1"/>
+		<ref bean="Bookbean2"/>
+		</list>
+		</constructor-arg>
+		<constructor-arg name="address" ref="Addressbean1"></constructor-arg>	
+	</bean>
+	 <bean  id="Studentbean2" class="com.hibernate.Student">
+	<constructor-arg name="sid" value=" 02"></constructor-arg>
+		<constructor-arg name="sname" value="Naveen"></constructor-arg>	
+		<constructor-arg name="blist">
+		<list>
+		<ref bean="Bookbean3"/>
+		<ref bean="Bookbean4"/>
+		</list>
+		</constructor-arg>
+		<constructor-arg name="address" ref="Addressbean2"></constructor-arg>
+	
+	</bean>
+</beans>
